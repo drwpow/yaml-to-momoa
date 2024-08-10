@@ -1,0 +1,34 @@
+{
+  "name": "yaml-to-momoa",
+  "version": "0.0.0",
+  "description": "Convert YAML to Momoa JSON AST",
+  "type": "module",
+  "author": {
+    "name": "Drew Powers",
+    "email": "drew@pow.rs"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drwpow/yaml-to-momoa"
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "biome check",
+    "test": "pnpm run --parallel \"/^test:*/\"",
+    "test:ts": "tsc --noEmit",
+    "test:js": "vitest run",
+    "version": "pnpm run build && changeset version && pnpm i"
+  },
+  "dependencies": {
+    "@humanwhocodes/momoa": "^3.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.8.3",
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.7",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
