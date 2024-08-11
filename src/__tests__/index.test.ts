@@ -677,6 +677,41 @@ describe("yamlToMomoa", () => {
       },
     ],
     [
+      // note: this behavior can change in the future; for now, just test it doesn’t break
+      "comments are ignored",
+      {
+        yaml: `# ----
+# My Document
+# ----
+
+foo: bar # Inline comment`,
+        momoa: {
+          type: "Document",
+          body: {
+            type: "Object",
+            members: [
+              {
+                type: "Member",
+                name: {
+                  type: "String",
+                  value: "foo",
+                  loc: { start: { line: 5, column: 2, offset: 29 }, end: { line: 5, column: 4, offset: 31 } },
+                },
+                value: {
+                  type: "String",
+                  value: "bar",
+                  loc: { start: { line: 5, column: 7, offset: 34 }, end: { line: 5, column: 9, offset: 36 } },
+                },
+                loc: { start: { line: 5, column: 2, offset: 29 }, end: { line: 5, column: 9, offset: 36 } },
+              },
+            ],
+            loc: { start: { line: 5, column: 2, offset: 29 }, end: { line: 5, column: 26, offset: 53 } },
+          },
+          loc: { start: { line: 1, column: 1, offset: 0 }, end: { line: 5, column: 26, offset: 53 } },
+        },
+      },
+    ],
+    [
       "anchor",
       {
         yaml: `- &ref one
