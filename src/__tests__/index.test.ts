@@ -1,7 +1,7 @@
-import type { DocumentNode } from "@humanwhocodes/momoa";
 import fs from "node:fs";
 import os from "node:os";
 import { fileURLToPath } from "node:url";
+import type { DocumentNode } from "@humanwhocodes/momoa";
 import { describe, expect, test } from "vitest";
 import yamlToMomoa from "../index.js";
 
