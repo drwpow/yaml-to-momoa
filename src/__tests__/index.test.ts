@@ -1,5 +1,6 @@
 import type { DocumentNode } from "@humanwhocodes/momoa";
 import fs from "node:fs";
+import os from "node:os";
 import { fileURLToPath } from "node:url";
 import { describe, expect, test } from "vitest";
 import yamlToMomoa from "../index.js";
@@ -716,7 +717,7 @@ describe("yamlToMomoa", () => {
     expect(yamlToMomoa(yaml, parseOptions)).toEqual(momoa);
   });
 
-  test("file", () => {
+  test.skipIf(() => os.platform() === "win32")("file", () => {
     const yaml = fs.readFileSync(new URL("./fixtures/radix.yaml", import.meta.url), "utf8");
     expect(JSON.stringify(yamlToMomoa(yaml))).toMatchFileSnapshot(
       fileURLToPath(new URL("./fixtures/expected.json", import.meta.url)),
