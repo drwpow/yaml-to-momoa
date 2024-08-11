@@ -4,7 +4,7 @@
     "enabled": true
   },
   "files": {
-    "ignore": ["**/dist/**", "**/package.json"]
+    "ignore": ["**/dist/**", "**/fixtures/*", "**/package.json"]
   },
   "formatter": {
     "indentStyle": "space",
