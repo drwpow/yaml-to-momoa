@@ -1,6 +1,6 @@
 import type { AnyNode, DocumentNode } from "@humanwhocodes/momoa";
 import { LineCounter, type Range, parseDocument } from "yaml";
-import { transform, type YAMLNode } from "./transform.js";
+import { type YAMLNode, transform } from "./transform.js";
 
 export default function yamlToMomoa(yaml: string, parseOptions?: Parameters<typeof parseDocument>[1]): DocumentNode {
   const doc = parseDocument(yaml, {
