@@ -14,20 +14,24 @@
   },
   "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "lint": "biome check",
+    "build": "del-cli dist && tsc -p tsconfig.build.json",
+    "lint": "biome check src",
+    "format": "biome format src --write",
     "test": "pnpm run --parallel \"/^test:*/\"",
     "test:ts": "tsc --noEmit",
     "test:js": "vitest run",
     "version": "pnpm run build && changeset version && pnpm i"
   },
   "dependencies": {
-    "@humanwhocodes/momoa": "^3.2.0"
+    "@humanwhocodes/momoa": "^3.2.0",
+    "yaml": "^2.5.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@changesets/changelog-github": "^0.5.0",
     "@changesets/cli": "^2.27.7",
+    "@types/node": "^22.2.0",
+    "del-cli": "^5.1.0",
     "typescript": "^5.5.4",
     "vitest": "^2.0.5"
   }

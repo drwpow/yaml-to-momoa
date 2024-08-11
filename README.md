@@ -1,6 +1,6 @@
 # yaml-to-momoa
 
-Convert YAML to a [Momoa JSON AST](https://www.npmjs.com/package/@humanwhocodes/momoa).
+Convert YAML to a [Momoa JSON AST](https://www.npmjs.com/package/@humanwhocodes/momoa). Powered by [yaml](https://eemeli.org/yaml).
 
 ## Setup
 
@@ -19,12 +19,10 @@ const yaml = `object:
 console.log(yamlToMomoa(yaml)); // DocumentNode
 ```
 
-You can then traverse the AST just like a momoa node
+You can then traverse the AST just like a Momoa node.
 
-## Differences from a normal YAML parser
+## Gotchas
 
-⚠️ This is **NOT** a YAML parser! This just converts YAML to a JSON-like structure. This means that **YAML features not in JSON aren’t supported** (anchors, refs, etc).
-
-- YAML extensions like anchors and references aren’t supported; they’ll just throw a syntax error.
-- Comments are supported, and converted to `LineComment` or `BlockComment` appropriately (i.e. parsed as JSONC for Momoa)
-- The error handling is minimal. If invalid YAML is passed in, it won’t throw a helpful error. Other libraries will be better for validating YAML than this one.
+- This preserves original locations (lines and columns) as best it can, but since YAML ↔ JSON syntax isn’t 1:1, this will result in “impossible” locations (the lines and columns won’t ever match up to any JSON source, since they came from YAML).
+- Since `yaml` is doing the parsing, all YAML features are supported, but superset features have to make some concessions to map to a JSON structure. For example, references (`&[id]`) will all get expanded as if they were duplicated in the original file.
+  - Situations like this will lead to some interesting sourcemap locations, to the first point
