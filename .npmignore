@@ -1,2 +1,8 @@
+.changeset
+.github
+.vscode
 *.test.*
+biome.*
 src
+tsconfig.*
+vite.*
