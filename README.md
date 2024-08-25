@@ -16,10 +16,22 @@ const yaml = `object:
     foo: bar
     bar: 42`;
 
-console.log(yamlToMomoa(yaml)); // DocumentNode
+const ast = yamlToMomoa(yaml);
+
+console.log(ast); // DocumentNode
 ```
 
 You can then traverse the AST just like a Momoa node.
+
+## FAQ
+
+#### Why would I need this?
+
+If you have some project using JSON and you’re using Momoa, and want to add YAML support. If you aren’t using Momoa, you don’t need this.
+
+#### Can this convert Momoa AST to YAML AST?
+
+No.
 
 ## Gotchas
 
