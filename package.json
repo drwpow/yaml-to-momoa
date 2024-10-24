@@ -1,6 +1,6 @@
 {
   "name": "yaml-to-momoa",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Convert YAML to Momoa JSON AST",
   "type": "module",
   "author": {
