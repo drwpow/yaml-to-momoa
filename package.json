@@ -1,6 +1,6 @@
 {
   "name": "yaml-to-momoa",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Convert YAML to Momoa JSON AST",
   "type": "module",
   "author": {
@@ -18,7 +18,7 @@
         "default": "./dist/index.mjs",
         "types": "./dist/index.d.mts"
       },
-      "require":{
+      "require": {
         "default": "./dist/index.cjs",
         "types": "./dist/index.d.cts"
       },
