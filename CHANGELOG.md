@@ -1,5 +1,11 @@
 # yaml-to-momoa
 
+## 0.0.6
+
+### Patch Changes
+
+- [#13](https://github.com/drwpow/yaml-to-momoa/pull/13) [`af0fa84`](https://github.com/drwpow/yaml-to-momoa/commit/af0fa84397b63a597ff2136c3a632517aa8da6c4) Thanks [@drwpow](https://github.com/drwpow)! - Update yaml to 2.7.1, momoa to 3.3.8
+
 ## 0.0.5
 
 ### Patch Changes
