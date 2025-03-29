@@ -19,7 +19,8 @@
         "useArrowFunction": "off"
       },
       "suspicious": {
-        "noConsoleLog": "error"
+        "noConsoleLog": "error",
+        "noFallthroughSwitchClause": "error"
       },
       "style": {
         "useBlockStatements": "error"
