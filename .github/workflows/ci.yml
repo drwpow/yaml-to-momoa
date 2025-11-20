@@ -14,25 +14,22 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: lts/*
       - uses: pnpm/action-setup@v4
         with:
           version: latest
           run_install: true
       - run: pnpm run lint
-  test-node-versions:
+  tests:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20, 22, 23]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: lts/*
       - uses: pnpm/action-setup@v4
         with:
           version: latest
@@ -42,10 +39,10 @@ jobs:
   test-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: lts/*
       - uses: pnpm/action-setup@v4
         with:
           version: latest
@@ -55,10 +52,10 @@ jobs:
   test-windows:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: lts/*
       - uses: pnpm/action-setup@v4
         with:
           version: latest
