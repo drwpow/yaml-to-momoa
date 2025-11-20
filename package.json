@@ -1,6 +1,6 @@
 {
   "name": "yaml-to-momoa",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Convert YAML to Momoa JSON AST",
   "type": "module",
   "author": {
@@ -40,18 +40,18 @@
     "version": "pnpm run build && changeset version && pnpm i"
   },
   "dependencies": {
-    "@humanwhocodes/momoa": "^3.3.8",
-    "yaml": "^2.7.1"
+    "@humanwhocodes/momoa": "^3.3.10",
+    "yaml": "^2.8.1"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.3.6",
     "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "^2.28.1",
-    "@types/node": "^22.13.14",
-    "del-cli": "^6.0.0",
-    "typescript": "^5.8.2",
-    "unbuild": "^3.5.0",
-    "vitest": "^3.0.9"
+    "@changesets/cli": "^2.29.7",
+    "@types/node": "^24.10.1",
+    "del-cli": "^7.0.0",
+    "typescript": "^5.9.3",
+    "unbuild": "^3.6.1",
+    "vitest": "^4.0.10"
   },
   "pnpm": {
     "onlyBuiltDependencies": [

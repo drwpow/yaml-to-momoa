@@ -1,10 +1,8 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "organizeImports": {
-    "enabled": true
-  },
+  "$schema": "https://biomejs.dev/schemas/2.3.6/schema.json",
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "files": {
-    "ignore": ["**/dist/**", "**/fixtures/*", "**/package.json"]
+    "includes": ["**", "!**/dist/**", "!**/fixtures/**/*", "!**/package.json"]
   },
   "formatter": {
     "indentStyle": "space",
@@ -19,8 +17,8 @@
         "useArrowFunction": "off"
       },
       "suspicious": {
-        "noConsoleLog": "error",
-        "noFallthroughSwitchClause": "error"
+        "noFallthroughSwitchClause": "error",
+        "noConsole": { "level": "error", "options": { "allow": ["log"] } }
       },
       "style": {
         "useBlockStatements": "error"
