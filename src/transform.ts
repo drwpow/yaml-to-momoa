@@ -54,12 +54,18 @@ export function transformYAMLMap(
 ): ObjectNode {
   return {
     type: "Object",
-    members: node.items.map((item) => ({
-      type: "Member",
-      name: transform(item.key, { doc, transformRange }) as StringNode,
-      value: transform(item.value, { doc, transformRange }),
-      loc: transformRange([item.key.range?.[0] ?? -1, item.value?.range?.[1] ?? -1, item.value?.range?.[2] ?? -1]), // note: the YAML parser doesn’t keep a range on the item itself; use its children instead
-    })),
+    members: node.items.map((item) => {
+      // coerce all numbers to strings, otherwise Momoa will generate bad JSON
+      if (typeof item.key.value !== "string") {
+        item.key.value = String(item.key.value);
+      }
+      return {
+        type: "Member",
+        name: transform(item.key, { doc, transformRange }) as StringNode,
+        value: transform(item.value, { doc, transformRange }),
+        loc: transformRange([item.key.range?.[0] ?? -1, item.value?.range?.[1] ?? -1, item.value?.range?.[2] ?? -1]), // note: the YAML parser doesn’t keep a range on the item itself; use its children instead
+      };
+    }),
     loc: transformRange(node.range),
   };
 }

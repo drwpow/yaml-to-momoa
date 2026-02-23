@@ -438,7 +438,10 @@ describe("yamlToMomoa", () => {
       {
         yaml: `object:
   property:
-    foo: bar`,
+    foo: bar
+    1: true
+    true: baz
+    false: bat`,
         momoa: {
           type: "Document",
           body: {
@@ -487,20 +490,89 @@ describe("yamlToMomoa", () => {
                               end: { line: 3, column: 13, offset: 31 },
                             },
                           },
+                          {
+                            type: "Member",
+                            name: {
+                              type: "String",
+                              value: "1",
+                              loc: {
+                                start: { column: 6, line: 4, offset: 37 },
+                                end: { column: 6, line: 4, offset: 37 },
+                              },
+                            },
+                            value: {
+                              type: "Boolean",
+                              value: true,
+                              loc: {
+                                start: { column: 9, line: 4, offset: 40 },
+                                end: { column: 12, line: 4, offset: 43 },
+                              },
+                            },
+                            loc: {
+                              start: { column: 6, line: 4, offset: 37 },
+                              end: { column: 12, line: 4, offset: 43 },
+                            },
+                          },
+                          {
+                            type: "Member",
+                            name: {
+                              type: "String",
+                              value: "true",
+                              loc: {
+                                start: { column: 6, line: 5, offset: 49 },
+                                end: { column: 9, line: 5, offset: 52 },
+                              },
+                            },
+                            value: {
+                              type: "String",
+                              value: "baz",
+                              loc: {
+                                start: { column: 12, line: 5, offset: 55 },
+                                end: { column: 14, line: 5, offset: 57 },
+                              },
+                            },
+                            loc: {
+                              start: { column: 6, line: 5, offset: 49 },
+                              end: { column: 14, line: 5, offset: 57 },
+                            },
+                          },
+                          {
+                            type: "Member",
+                            name: {
+                              type: "String",
+                              value: "false",
+                              loc: {
+                                start: { column: 6, line: 6, offset: 63 },
+                                end: { column: 10, line: 6, offset: 67 },
+                              },
+                            },
+                            value: {
+                              type: "String",
+                              value: "bat",
+                              loc: {
+                                start: { column: 13, line: 6, offset: 70 },
+                                end: { column: 15, line: 6, offset: 72 },
+                              },
+                            },
+                            loc: {
+                              start: { column: 6, line: 6, offset: 63 },
+                              end: { column: 15, line: 6, offset: 72 },
+                            },
+                          },
                         ],
-                        loc: { start: { line: 3, column: 6, offset: 24 }, end: { line: 3, column: 13, offset: 31 } },
+                        loc: { start: { line: 3, column: 6, offset: 24 }, end: { line: 6, column: 15, offset: 72 } },
                       },
-                      loc: { start: { line: 2, column: 4, offset: 10 }, end: { line: 3, column: 13, offset: 31 } },
+                      loc: { start: { line: 2, column: 4, offset: 10 }, end: { line: 6, column: 15, offset: 72 } },
                     },
                   ],
-                  loc: { start: { line: 2, column: 4, offset: 10 }, end: { line: 3, column: 13, offset: 31 } },
+                  loc: { start: { line: 2, column: 4, offset: 10 }, end: { line: 6, column: 15, offset: 72 } },
                 },
-                loc: { start: { line: 1, column: 1, offset: 0 }, end: { line: 3, column: 13, offset: 31 } },
+                loc: { start: { line: 1, column: 1, offset: 0 }, end: { line: 6, column: 15, offset: 72 } },
               },
             ],
-            loc: { start: { line: 1, column: 1, offset: 0 }, end: { line: 3, column: 13, offset: 31 } },
+            loc: { start: { line: 1, column: 1, offset: 0 }, end: { line: 6, column: 15, offset: 72 } },
           },
-          loc: { start: { line: 1, column: 1, offset: 0 }, end: { line: 3, column: 13, offset: 31 } },
+          loc: { start: { line: 1, column: 1, offset: 0 }, end: { line: 6, column: 15, offset: 72 } },
         },
       },
     ],
