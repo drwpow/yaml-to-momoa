@@ -1,5 +1,11 @@
 # yaml-to-momoa
 
+## 0.0.9
+
+### Patch Changes
+
+- [#17](https://github.com/drwpow/yaml-to-momoa/pull/17) [`6921a3e`](https://github.com/drwpow/yaml-to-momoa/commit/6921a3ec58e5707bb361f32f29c3f64c218f81d3) Thanks [@drwpow](https://github.com/drwpow)! - Coerce all object keys into strings
+
 ## 0.0.8
 
 ### Patch Changes
