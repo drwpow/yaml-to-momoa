@@ -1,5 +1,15 @@
 # yaml-to-momoa
 
+## 0.1.0
+
+### Minor Changes
+
+- [#22](https://github.com/drwpow/yaml-to-momoa/pull/22) [`4395b6e`](https://github.com/drwpow/yaml-to-momoa/commit/4395b6e0033567fdbf079c113c906a3e5e0e391f) Thanks [@drwpow](https://github.com/drwpow)! - Breaking: drop CJS build, only ship ESM
+
+### Patch Changes
+
+- [#22](https://github.com/drwpow/yaml-to-momoa/pull/22) [`4395b6e`](https://github.com/drwpow/yaml-to-momoa/commit/4395b6e0033567fdbf079c113c906a3e5e0e391f) Thanks [@drwpow](https://github.com/drwpow)! - Bump yaml to 2.9.0
+
 ## 0.0.9
 
 ### Patch Changes
