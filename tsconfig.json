@@ -1,16 +1,20 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "declaration": true,
+    "declarationMap": true,
+    "erasableSyntaxOnly": true,
+    "isolatedDeclarations": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "dist",
+    "rootDir": "src",
     "sourceMap": true,
     "strict": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "types": ["node"]
   },
   "include": ["src"],
   "exclude": ["dist", "node_modules"]

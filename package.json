@@ -12,28 +12,14 @@
     "type": "git",
     "url": "https://github.com/drwpow/yaml-to-momoa"
   },
-  "packageManager": "pnpm@10.30.1",
+  "packageManager": "pnpm@11.21.0",
   "exports": {
-    ".": {
-      "import": {
-        "default": "./dist/index.mjs",
-        "types": "./dist/index.d.mts"
-      },
-      "require": {
-        "default": "./dist/index.cjs",
-        "types": "./dist/index.d.cts"
-      },
-      "default": {
-        "default": "./dist/index.mjs",
-        "types": "./dist/index.d.mts"
-      }
-    },
-    "./*": "./dist/*",
+    ".": "./dist/index.js",
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "unbuild",
-    "lint": "biome check src",
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "biome check src && tsc --noEmit",
     "format": "biome format src --write",
     "test": "pnpm run --parallel \"/^test:*/\"",
     "test:ts": "tsc --noEmit",
@@ -42,22 +28,14 @@
   },
   "dependencies": {
     "@humanwhocodes/momoa": "^3.3.10",
-    "yaml": "^2.8.2"
+    "yaml": "^2.9.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.4",
-    "@changesets/changelog-github": "^0.5.2",
-    "@changesets/cli": "^2.29.8",
-    "@types/node": "^24.10.13",
-    "del-cli": "^7.0.0",
-    "typescript": "^5.9.3",
-    "unbuild": "^3.6.1",
-    "vitest": "^4.0.18"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@biomejs/biome",
-      "esbuild"
-    ]
+    "@biomejs/biome": "^2.5.8",
+    "@changesets/changelog-github": "^1.0.0",
+    "@changesets/cli": "^3.0.0",
+    "@types/node": "^26.2.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
   }
 }
